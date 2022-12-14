@@ -1,0 +1,8 @@
+#experiencia{
+    background-color: rgb(47, 132, 230);
+}
+section.about{
+    margin-top: 1rem;
+    border-style: groove;
+    border-radius: 5rem;
+}

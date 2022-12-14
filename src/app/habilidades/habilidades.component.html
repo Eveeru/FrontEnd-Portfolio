@@ -1,0 +1,13 @@
+<section id="Habilidades"class="about">
+    <div class="container">
+      <div class="row">
+        <p><h4>Hard & Soft Skills</h4>
+        <div class="habilidades mb-3" *ngFor="let progreso of progresos">
+          <div class="barra">
+            <!--Interación sobre la variable de instancia y presentacion de datos mediante interpolacion-->
+            <div class="progreso" [style.--w.%]="progreso.porcentaje">{{progreso.porcentaje}}% {{progreso.nombre}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
