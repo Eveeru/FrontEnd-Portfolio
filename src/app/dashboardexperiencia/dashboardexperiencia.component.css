@@ -1,0 +1,15 @@
+i.fa-solid.fa-x,
+i.fa-solid.fa-pencil{
+    color:rgb(54, 56, 55)
+}
+.list-group{
+    --bs-list-group-bg: transparet;
+}
+#experiencia{
+    background-color: rgb(109, 174, 248);
+}
+section.about{
+    margin-top: 1rem;
+    border-style: groove;
+    border-radius: 5rem;
+}

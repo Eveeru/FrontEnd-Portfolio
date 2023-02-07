@@ -1,0 +1,12 @@
+section.about{
+    margin-top: 1rem;
+    border-style: groove;
+    border-radius: 5rem;
+}
+.list-group{
+    --bs-list-group-bg: transparet;
+    }
+    i.fa-solid.fa-x,
+i.fa-solid.fa-pencil{
+    color:rgb(54, 56, 55)
+}

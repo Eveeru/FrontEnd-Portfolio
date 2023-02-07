@@ -1,3 +1,104 @@
-section.panel{
+/*barra de navegacion*/
+.navbar.navbar-expand-lg.bg-secondary{
+    background-color:rgb(0, 0, 0) !important;
+}
+i.fa-brands.fa-instagram.fa-xl,
+i.fa-brands.fa-twitter.fa-xl,
+i.fa-brands.fa-facebook.fa-xl,
+i.fa-brands.fa-linkedin.fa-xl,
+i.fa-brands.fa-github.fa-xl,
+i.fa-sharp.fa-solid.fa-user-check.fa-xl,
+i.fa-solid.fa-user-tie.fa-xl{
+    color: rgb(248, 246, 246);
+}
+i.fa-solid.fa-x,
+i.fa-solid.fa-pencil{
+    color:rgb(54, 56, 55)
+}
+i.fa-brands.fa-instagram.fa-xl:hover{
+color:rgba(231, 67, 168, 0.692)
+}
+i.fa-brands.fa-twitter.fa-xl:hover{
+    color:rgb(34, 223, 236)
+}
+i.fa-brands.fa-github.fa-xl:hover{
+    color: rgb(202, 199, 199)
+}
+i.fa-brands.fa-facebook.fa-xl:hover{
+    color:rgb(0, 0, 255)
+}
+i.fa-brands.fa-linkedin.fa-xl:hover{
+    color:rgb(83, 140, 214)
+}
+i.fa-solid.fa-user-tie.fa-xl:hover{
+    color: rgb(121, 235, 210)
+}
+.list-group{
+--bs-list-group-bg: transparet;
+}
+
+
+section.about{
+    margin-top: 5rem;
+}
+/*section.dat{
+    margin-top: 25rem;
+}*/
+/*section.sobre-mi.about{
+
+    margin: top 25rem;
+}*/
+
+section.dashboard1,section.panel{
     margin: 9rem;  
+}
+/*i.fa-solid.fa-image.fa-2xl{
+    color: rgb(248, 246, 246);
+}*/
+#experiencia{
+    background-color: rgb(109, 174, 248);
+}
+
+
+#habilidades{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(222, 223, 224);
+}
+
+.contenedor{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra{
+    width: 350px;
+    height: 20px;
+    background: rgba(12, 34, 240, 0.5);
+    border-radius: 10px;
+    box-shadow:20px 25px 45px rgba(0,0,0,0.1);
+    border-right: 3px solid rgba(194, 194, 194, 0.5);
+    border-bottom: 3px solid rgba(219, 219, 219, 0.5);
+}
+.progreso{
+    width: var(--w);
+    height: 100%;
+    background: rgba(18, 231, 213, 0.5);
+    border-radius: 10px;
+    animation:Aumentar 5s ease;
+}
+@keyframes Aumentar{
+    0%{width: 0%;}
+    100%{width: var(--w)}
+}
+.progreso:hover{
+    animation:Aumentar 5s ease;
+}
+#proyectos{
+    background-color: rgb(109, 174, 248);
 }

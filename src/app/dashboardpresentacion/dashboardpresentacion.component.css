@@ -1,0 +1,12 @@
+i.fa-solid.fa-x,
+i.fa-solid.fa-pencil{
+    color:rgb(54, 56, 55)
+}
+.list-group{
+    --bs-list-group-bg: transparet;
+}
+#sobre-mi{
+    border-style:groove;
+    border-radius: 5rem;
+    margin-top: 1rem;
+}

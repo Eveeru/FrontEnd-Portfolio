@@ -24,8 +24,6 @@ export class ProyectosComponent implements OnInit {
       this.titulo=data.titulo;
       this.realizacion=data.realizacion;
       this.Descripcion=data.Descripcion;
-
-      
     });
   }
 

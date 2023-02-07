@@ -22,8 +22,6 @@ export class HabilidadesComponent implements OnInit {
       //console.log(data);
       //Definir info a mostrar
       this.progresos=data.progresos;
-
-      
     });
   }
 

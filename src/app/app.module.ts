@@ -17,6 +17,11 @@ import { ErrorComponent } from './error/error.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NabvardashboardComponent } from './nabvardashboard/nabvardashboard.component';
 import { LogoutComponent } from './modals/logout/logout.component';
+import { DashboardpresentacionComponent } from './dashboardpresentacion/dashboardpresentacion.component';
+import { DashboardexperienciaComponent } from './dashboardexperiencia/dashboardexperiencia.component';
+import { DashboardeducacionComponent } from './dashboardeducacion/dashboardeducacion.component';
+import { DashboardhabilidadesComponent } from './dashboardhabilidades/dashboardhabilidades.component';
+import { DashboardproyectosComponent } from './dashboardproyectos/dashboardproyectos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { LogoutComponent } from './modals/logout/logout.component';
     ErrorComponent,
     DashboardComponent,
     NabvardashboardComponent,
-    LogoutComponent
+    LogoutComponent,
+    DashboardpresentacionComponent,
+    DashboardexperienciaComponent,
+    DashboardeducacionComponent,
+    DashboardhabilidadesComponent,
+    DashboardproyectosComponent
   ],
   imports: [
     BrowserModule,

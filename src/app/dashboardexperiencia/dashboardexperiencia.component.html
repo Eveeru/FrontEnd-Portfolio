@@ -1,0 +1,31 @@
+<section id="experiencia"class="about">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-3">
+              <h4>Experiencia</h4>
+              <br>
+              <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="30%" height="">
+              <br>
+              <br>
+              <br>
+              <br>
+             <img [src]="'/assets/img/d-center.png'" alt="logo call" width="30%" height="">
+            </div>
+            <div class="col-8">
+              <h5 class="center" *ngFor="let experiencia of experiencias">
+                <br>
+              <p>{{experiencia.trabajo}}</p>
+              <p>{{experiencia.puesto}}</p>
+              <p>{{experiencia.descripcion}}</p>
+              <p><time>{{experiencia.periodo}}</time></p></h5>
+            </div>
+            <div class="col-sm-1">
+                <br>
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><i class="fa-solid fa-pencil"></i></li>
+                    <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+                 </ul>
+             </div>
+          </div>
+   </div>
+   </section>
