@@ -22,6 +22,7 @@ import { DashboardexperienciaComponent } from './dashboardexperiencia/dashboarde
 import { DashboardeducacionComponent } from './dashboardeducacion/dashboardeducacion.component';
 import { DashboardhabilidadesComponent } from './dashboardhabilidades/dashboardhabilidades.component';
 import { DashboardproyectosComponent } from './dashboardproyectos/dashboardproyectos.component';
+import { BannerComponent } from './modals/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DashboardproyectosComponent } from './dashboardproyectos/dashboardproye
     DashboardexperienciaComponent,
     DashboardeducacionComponent,
     DashboardhabilidadesComponent,
-    DashboardproyectosComponent
+    DashboardproyectosComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
