@@ -6,18 +6,67 @@
          <h5>{{nombre}} {{apellido}}</h5>
         <h5>{{tituloperfil}}</h5>
          <div class="col-sm-1">
-          <br><ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><i class="fa-solid fa-pencil"></i></li>
-              <li class="list-group-item"><i class="fa-solid fa-x"></i></li></ul>
+         <div><ul class="list-group list-group-horizontal">
+        <!-- Button trigger modal -->
+        <li class="list-group-item">
+            <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalperfil">
+            </i>
+            <div class="modal fade" id="Modalperfil" tabindex="-1" aria-labelledby="#Modalperfil" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="row modal-header">
+                    <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Foto</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Nombre y Apellido</label>
+                    <input class="form-control" type="text" id="formFileMultiple" multiple>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                  </div>
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+      </ul>
+    </div>
        </div>
        </div>
        <div class="col-8 mt-5">
          <h5><br><br><br>{{presentacion}}</h5>
       </div>
       <div class="col-sm-1">
-          <br><ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><i class="fa-solid fa-pencil"></i></li>
-              <li class="list-group-item"><i class="fa-solid fa-x"></i></li></ul>
+        <div><ul class="list-group list-group-horizontal">
+          <!-- Button trigger modal -->
+          <li class="list-group-item">
+              <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalpresentacion">
+              </i>
+              <div class="modal fade" id="Modalpresentacion" tabindex="-1" aria-labelledby="#Modalpresentacion" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="row modal-header">
+                    <div class="mb-3">
+                      <label for="formFileMultiple" class="form-label">presentacion</label>
+                      <input class="form-control" type="text" id="formFileMultiple" multiple>
+                      <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                    <div class="mb-3">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </li>
+          <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+        </ul>
+      </div>
        </div>
      </div>
     </div>

@@ -7,11 +7,35 @@
             <h5>{{Descripcion}}</h5>
          <link href="">
          <div class="col-sm-1">
-            <br>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item"><i class="fa-solid fa-pencil"></i></li>
-                <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-             </ul>
+          <div><ul class="list-group list-group-horizontal">
+            <!-- Button trigger modal -->
+            <li class="list-group-item">
+                <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalproyectos">
+                </i>
+                <div class="modal fade" id="Modalproyectos" tabindex="-1" aria-labelledby="#Modalproyectos" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="row modal-header">
+                      <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label">titulo</label>
+                        <input class="form-control" type="text" id="formFileMultiple" multiple>
+                        <label for="formFileMultiple" class="form-label">realizacion</label>
+                        <input class="form-control" type="text" id="formFileMultiple" multiple>
+                        <label for="formFileMultiple" class="form-label">descripcion</label>
+                        <input class="form-control" type="text" id="formFileMultiple" multiple>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                      </div>
+                      <div class="mb-3">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+            <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+          </ul>
+        </div>
          </div>
       </div>
     </div>      

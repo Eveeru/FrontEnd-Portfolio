@@ -9,7 +9,7 @@ section.about{
 .list-group{
     --bs-list-group-bg: transparet;
     }
-    i.fa-solid.fa-x,
-    i.fa-solid.fa-pencil{
-        color:rgb(54, 56, 55)
+    i.fa-solid.fa-x:hover,
+    i.fa-solid.fa-pencil:hover{
+        color:rgb(4, 236, 236)
     }    

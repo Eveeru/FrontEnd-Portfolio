@@ -9,11 +9,33 @@
           </div>
         </div>
         <div class="col-sm-1">
-            <br>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item"><i class="fa-solid fa-pencil"></i></li>
-                <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-             </ul>
+          <div ><ul class="list-group list-group-horizontal">
+            <!-- Button trigger modal -->
+            <li class="list-group-item">
+                <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalhabilidades">
+                </i>
+                <div class="modal fade" id="Modalhabilidades" tabindex="-1" aria-labelledby="Modalhabilidades" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="row modal-header">
+                        <div class="mb-3">
+                          <label for="formFileMultiple" class="form-label">Hard & Soft Skills</label>
+                          <input class="form-control" type="text" id="formFileMultiple" multiple>
+                          <label for="formFileMultiple" class="form-label">porcentaje</label>
+                          <input class="form-control" type="text" id="formFileMultiple" multiple>
+                        </div>
+                        <div class="mb-3">
+                          <button type="button" class="btn btn-primary">Guardar</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>    
+                </div>
+            </li>
+            <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+          </ul>
+        </div>
          </div>
       </div>
     </div>
