@@ -1,16 +1,19 @@
 <section id="sobre-mi">
-    <div class="container text-center">
-      <div class="row">
+    <div class="container text-center" >
+      <div class="row" *ngFor="let persona of personas">
         <div class="col-3 mt-3">
           <img [src]="'/assets/img/yo.perfil.png'" class="rounded-circle w-75" alt="foto de perfil"title="...">
-          <h5>{{nombre}} {{apellido}}</h5>
-        <h5>{{tituloperfil}}</h5>
+          <h5>{{persona.nombre}} {{persona.apellido}}</h5>
+        <h5>{{persona.tituloperfil}}</h5>
         </div>
         <div class="col-9 mt-5">
          <div class="mt-5" type="text">
-          <h5>{{presentacion}}</h5>
+          <h5>{{persona.presentacion}}</h5>
          </div>
         </div>
       </div>
     </div>
     </section>
+
+  <!--"col-3 mt-3"-->
+  <!--"col-xs-12 col-sm-2 col-md-2 col-lg-2"-->

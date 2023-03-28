@@ -5,9 +5,9 @@ import { ErrorComponent } from './error/error.component';
 import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
-  {path:'intro', component:IntroComponent},
+  {path:'**', component:IntroComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'**',  component:ErrorComponent}
+  {path:'',  component:ErrorComponent}
 ];
 
 @NgModule({

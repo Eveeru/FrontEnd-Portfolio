@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../servicios/datos.service';
+import { Experiencia } from 'src/app/models/experiencia';
+import { ExperienciaService } from '../servicios/experiencia.service';
+
 
 @Component({
   selector: 'app-experiencia',
@@ -7,21 +9,22 @@ import { DatosService } from '../servicios/datos.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  //Crear variable de instancia para almacenar los datos con los que trata el Servicio
-  
-  experiencias: any = [];
+  experiencias: Experiencia[]=[]; //se llama al modelo que es un array
+
 
   constructor(
      //Inyectar el servicio para tomar acceso en la clase a los métodos
-     private datosService: DatosService) { }
+     private expeServ: ExperienciaService) { }
 
+     //se debe cargar para que lo muestre al inicio
   ngOnInit(): void {
-     //Esto es almacenar en lqa variable de instancia los datos recuperados por el Servicio
-     this.datosService.getDatos().subscribe(data => {
-      //console.log(data);
-      //Definir info a mostrar
-      this.experiencias=data.experiencias;
-    });
+    this.cargarExperiencia();
   }
+     
+    cargarExperiencia():void{
+      this.expeServ.list().subscribe(data => {this.experiencias=data});
+    }
+
+  
 
 }

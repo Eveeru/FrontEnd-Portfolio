@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
@@ -23,6 +24,7 @@ import { DashboardeducacionComponent } from './dashboardeducacion/dashboardeduca
 import { DashboardhabilidadesComponent } from './dashboardhabilidades/dashboardhabilidades.component';
 import { DashboardproyectosComponent } from './dashboardproyectos/dashboardproyectos.component';
 import { BannerComponent } from './modals/banner/banner.component';
+import { LogoArgpComponent } from './components/logo-argp/logo-argp.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +47,14 @@ import { BannerComponent } from './modals/banner/banner.component';
     DashboardeducacionComponent,
     DashboardhabilidadesComponent,
     DashboardproyectosComponent,
-    BannerComponent
+    BannerComponent,
+    LogoArgpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

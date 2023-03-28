@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../servicios/datos.service';
+import { Persona } from 'src/app/models/persona';
+import { PersonaService } from '../servicios/persona.service';
+
 
 @Component({
   selector: 'app-presentacion',
@@ -7,31 +9,20 @@ import { DatosService } from '../servicios/datos.service';
   styleUrls: ['./presentacion.component.css']
 })
 export class PresentacionComponent implements OnInit {
-  
-  //Crear variable de instancia para almacenar los datos con los que trata el Servicio
-  
-  nombre: string = '';
-  apellido: string = '';
-  imgperfil: string = '';
-  tituloperfil: string = '';
-  presentacion: string = '';
+  personas: Persona[]=[]; //se llama al modelo que es un array
 
   constructor(
-    //Inyectar el servicio para tomar acceso en la clase a los métodos
-    private datosService: DatosService) { }
+     //Inyectar el servicio para tomar acceso en la clase a los métodos
+     private persoServ: PersonaService) { }
 
+     //se debe cargar para que lo muestre al inicio
   ngOnInit(): void {
-    //Esto es almacenar en lqa variable de instancia los datos recuperados por el Servicio
-    this.datosService.getDatos().subscribe(data => {
-      console.log(data);
-      //Definir info a mostrar
-      
-      this.nombre=data.nombre;
-      this.apellido=data.apellido;
-      this.imgperfil=data.imgperfil;
-      this.tituloperfil=data.tituloperfil;
-      this.presentacion=data.presentacion;
-    });
+    this.cargarPersona();
   }
 
+  cargarPersona():void{
+  this.persoServ.list().subscribe(data => {this.personas=data});
 }
+
+
+} 
