@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../servicios/datos.service';
+import { PersonaService } from '../servicios/persona.service';
+import { Persona } from '../models/persona';
 
 @Component({
   selector: 'app-dashboardpresentacion',
@@ -7,24 +8,27 @@ import { DatosService } from '../servicios/datos.service';
   styleUrls: ['./dashboardpresentacion.component.css']
 })
 export class DashboardpresentacionComponent implements OnInit {
-  nombre: string = '';
-  apellido: string = '';
-  imgperfil: string = '';
-  tituloperfil: string = '';
-  presentacion: string = '';
+  personas: Persona[]=[]; //se llama al modelo que es un array
 
-  constructor(private datosService: DatosService) { }
+  constructor(private persoServ: PersonaService) { }
 
   ngOnInit(): void {
-    this.datosService.getDatos().subscribe(data => {
-      console.log(data);
+    this.cargarPersona();
+  }
 
-      this.nombre=data.nombre;
-      this.apellido=data.apellido;
-      this.imgperfil=data.imgperfil;
-      this.tituloperfil=data.tituloperfil;
-      this.presentacion=data.presentacion;
-    });
+  cargarPersona():void{
+  this.persoServ.list().subscribe(data => {this.personas=data});
+
+  
+  //void {
+   // this..getDatos().subscribe(data => {
+     // console.log(data);
+
+      //this.nombre=data.nombre;
+      //this.apellido=data.apellido;
+     // this.imgperfil=data.imgperfil;
+      //this.tituloperfil=data.tituloperfil;
+      //this.presentacion=data.presentacion;});
   }
 
 }
