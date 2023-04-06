@@ -1,12 +1,11 @@
 {
-    "persona": [
-        {
+    "persona": {
     "nombre": "Evelyn Ivonne",
     "apellido": "Russo",
     "imgperfil": "../assets/img/yo.perfil.png",
     "tituloperfil": "Full Stack Developer jr.",
     "presentacion": "Vivo en Villa de Soto, Cordoba, Argentina. Soy Desarrolladora web responsable y eficiente, con amplias habilidades de trabajo en equipo, bajo presion y con capacidad de rapido aprendizaje."
-}],
+},
     "educaciones": [
         {
             "id":0,
@@ -49,7 +48,7 @@
         {
             "id": 1,
             "nombre": "HTML",
-            "porcentaje": "80"
+            "porcentaje": "95"
         },
         {
             "id": 2,
@@ -75,6 +74,21 @@
             "id": 6,
             "nombre": "ANGULAR",
             "porcentaje": "70"
+        },
+        {
+            "id": 7,
+            "nombre": "MICROSOFT OFFICE",
+            "porcentaje": "90"
+        },
+        {
+            "id": 8,
+            "nombre": "Resolución de problemas",
+            "porcentaje": "70"
+        },
+        {
+            "id": 9,
+            "nombre": "Trabajo en equipo",
+            "porcentaje": "70"
         }
 
     ],
@@ -83,7 +97,8 @@
         {
             "titulo": "Porfolio de Arg. Programa",
             "realizacion": "fecha de realizacion:08/2022", 
-            "Descripcion": "Mi primer porfolio de presentacion"
-        }]
+            "descripcion": "Mi primer porfolio de presentacion"
+        }
+    ]
 
 }

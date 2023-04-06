@@ -8,9 +8,7 @@ import { DatosService } from '../servicios/datos.service';
 })
 export class ProyectosComponent implements OnInit {
   //Crear variable de instancia para almacenar los datos con los que trata el Servicio
-  titulo: string = '';
-  realizacion: string = '';
-  Descripcion: string = '';
+  proyectos: any;
 
   constructor(
      //Inyectar el servicio para tomar acceso en la clase a los métodos
@@ -21,9 +19,7 @@ export class ProyectosComponent implements OnInit {
      this.datosService.getDatos().subscribe(data => {
       //console.log(data);
       //Definir info a mostrar
-      this.titulo=data.titulo;
-      this.realizacion=data.realizacion;
-      this.Descripcion=data.Descripcion;
+      this.proyectos=data.proyecto;
     });
   }
 

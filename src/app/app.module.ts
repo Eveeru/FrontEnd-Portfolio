@@ -25,6 +25,8 @@ import { DashboardhabilidadesComponent } from './dashboardhabilidades/dashboardh
 import { DashboardproyectosComponent } from './dashboardproyectos/dashboardproyectos.component';
 import { BannerComponent } from './modals/banner/banner.component';
 import { LogoArgpComponent } from './components/logo-argp/logo-argp.component';
+import { BannersComponent } from './components/banners/banners.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { LogoArgpComponent } from './components/logo-argp/logo-argp.component';
     DashboardhabilidadesComponent,
     DashboardproyectosComponent,
     BannerComponent,
-    LogoArgpComponent
+    LogoArgpComponent,
+    BannersComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

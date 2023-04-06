@@ -1,7 +1,22 @@
-<section id="Educación"class="about">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-3"><h4>Educación</h4>
+<section id="educación"class="about">
+      <div class="row" *ngFor="let educacion of educaciones">
+        <h1> Educacion</h1>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+          <ul>
+            <li>
+              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo}}</h3>
+            </li>
+            <p>{{educacion.titulo}}</p>
+            <p>{{educacion.nivel}}</p>
+          </ul>
+          <ul>
+            <li>
+              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo}}</h3>
+            </li>
+            <p>{{educacion.titulo}}</p>
+            <p>{{educacion.nivel}}</p>
+          </ul>
         <img [src]="'/assets/img/logo ijme.jpg'" alt="logo ijme" width="30%" height="">
         <br>
         <br>
@@ -9,14 +24,5 @@
         <br>
         <img [src]="'/assets/img/arg.prog logo.png'" alt="logo argentina programa" width="30%" height="">
         </div>
-        <div class="col-9">
-          <h5 class="center" *ngFor="let educacion of educaciones">
-            <br>
-            <p>{{educacion.institucion}}</p>
-            <p>{{educacion.titulo}}</p>
-          <p>{{educacion.nivel}}</p>
-          <p><time>{{educacion.periodo}}</time></p></h5>
-        </div>
       </div>
-    </div>
   </section>

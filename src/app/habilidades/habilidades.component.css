@@ -1,27 +1,23 @@
-section.about{
-    margin-top: 1rem;
-    border-style: groove;
-    border-radius: 5rem;
+section{
+    background-color: rgb(176, 250, 255);
+    padding: 20px;
+    text-align: center;
 }
-#habilidades{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color: rgb(222, 223, 224);
+h1{
+    padding: 10px;
 }
-
-.contenedor{
+.box{
     width: 100vh;
-    height: 100vh;
-    display: flex;
+    height: 50vh;
+    display: contents;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
 .barra{
-    width: 350px;
-    height: 20px;
+    width: 500px;
+    height: 22px;
     background: rgba(12, 34, 240, 0.5);
     border-radius: 10px;
     box-shadow:20px 25px 45px rgba(0,0,0,0.1);
@@ -33,12 +29,12 @@ section.about{
     height: 100%;
     background: rgba(18, 231, 213, 0.5);
     border-radius: 10px;
-    animation:Aumentar 10s ease;
+    animation:Aumentar 5s ease;
 }
 @keyframes Aumentar{
-    0%{width: 0%;}
+    0%{width: 10%;}
     100%{width: var(--w)}
 }
 .progreso:hover{
-    animation:Aumentar 10s ease;
+    animation:Aumentar 30s ease;
 }
