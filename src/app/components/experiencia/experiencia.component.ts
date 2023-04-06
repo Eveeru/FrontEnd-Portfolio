@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
-import { ExperienciaService } from '../servicios/experiencia.service';
+import { ExperienciaService } from '../../servicios/experiencia.service';
 
 
 @Component({
