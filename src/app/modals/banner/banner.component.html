@@ -1,16 +1,21 @@
-<!-- Button trigger modal -->
-<li class="list-group-item">
-    <i class="fa-solid fa-image fa-2xl btn-lg p-5"type="button"data-bs-toggle="modal" data-bs-target="#Modalimg">
-    </i>
-    <div class="modal fade" id="Modalimg" tabindex="-1" aria-labelledby="Modalimg" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
+<div>
+  <ul class="list-group list-group-horizontal">
+    <!-- Button trigger modal -->
+    <li class="list-group-item">
+      <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalimg"></i>
+      <div class="modal fade" id="Modalbanner" tabindex="-1" aria-labelledby="Modalbanner" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
             <label for="formFileMultiple" class="form-label">Foto</label>
             <input class="form-control" type="file" id="formFileMultiple" multiple>
             <button type="button" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-</li>
+    </li>
+    <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+  </ul>
+</div>

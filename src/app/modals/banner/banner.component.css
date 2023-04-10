@@ -1,0 +1,8 @@
+i.fa-solid.fa-x:hover,
+i.fa-solid.fa-pencil:hover{
+        color:rgb(0, 0, 0)
+    }
+    i.list.group.item{
+        border-right: 50px !important;
+        border-radius: 5rem;
+    }

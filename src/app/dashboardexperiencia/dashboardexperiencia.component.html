@@ -1,84 +1,81 @@
 <section id="experiencia"class="about">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-3">
-              <h4>Experiencia</h4>
-              <br>
-              <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="30%" height="">
-              <br>
-              <br>
-              <br>
-              <br>
-             <img [src]="'/assets/img/d-center.png'" alt="logo call" width="30%" height="">
-             <div class="col-sm-1">
-              <div><ul class="list-group list-group-horizontal">
-             <!-- Button trigger modal -->
-             <li class="list-group-item">
-                 <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalimgexp">
-                 </i>
-                 <div class="modal fade" id="Modalimgexp" tabindex="-1" aria-labelledby="#Modalimgexp" aria-hidden="true">
-                   <div class="modal-dialog">
-                     <div class="modal-content">
-                       <div class="row modal-header">
-                         <div class="mb-3">
-                         <label for="formFileMultiple" class="form-label">Foto</label>
-                         <input class="form-control" type="file" id="formFileMultiple" multiple>
-                         <button type="button" class="btn btn-primary">Guardar</button>
-                       </div>
-                       <div class="mb-3">
-                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                       </div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-             </li>
-             <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-           </ul>
-         </div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-3">
+        <h1>Experiencia Laboral</h1>
+        <br>
+        <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="30%" height="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <img [src]="'/assets/img/d-center.png'" alt="logo call" width="30%" height="">
+        <div class="col-sm-1">
+          <div><ul class="list-group list-group-horizontal">
+          <!-- Button trigger modal -->
+          <li class="list-group-item">
+            <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalimgexp"></i>
+            <div class="modal fade" id="Modalimgexp" tabindex="-1" aria-labelledby="#Modalimgexp" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="row modal-header">
+            <div class="mb-3">
+              <label for="formFileMultiple" class="form-label">Foto</label>
+              <input class="form-control" type="file" id="formFileMultiple" multiple>
+              <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="mb-3">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
             </div>
             </div>
-            <div class="col-8">
-              <h5 class="center" *ngFor="let experiencia of experiencias">
-                <br>
-              <p>{{experiencia.trabajo}}</p>
-              <p>{{experiencia.puesto}}</p>
-              <p>{{experiencia.descripcion_exp}}</p>
-              <p><time>{{experiencia.periodo_exp}}</time></p></h5>
             </div>
-            <div class="col-sm-1">
-              <div><ul class="list-group list-group-horizontal">
-                <!-- Button trigger modal -->
-                <li class="list-group-item">
-                    <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalexperiencia">
-                    </i>
-                    <div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="row modal-header">
-                          <div class="mb-3">
-                            <label for="formFileMultiple" class="form-label">trabajo</label>
-                            <input class="form-control" type="text" id="formFileMultiple" multiple>
-                            <label for="formFileMultiple" class="form-label">puesto</label>
-                            <input class="form-control" type="text" id="formFileMultiple" multiple>
-                            <label for="formFileMultiple" class="form-label">descripcion</label>
-                            <input class="form-control" type="text" id="formFileMultiple" multiple>
-                            <label for="formFileMultiple" class="form-label">periodo</label>
-                            <input class="form-control" type="text" id="formFileMultiple" multiple>
-                            <button type="button" class="btn btn-primary">Guardar</button>
-                          </div>
-                          <div class="mb-3">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </li>
-                <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-              </ul>
             </div>
-             </div>
+            </div>
+          </li>
+          <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="col-8">
+        <h5 class="center" *ngFor="let experiencia of experiencias">
+          <br>
+          <p>{{experiencia.trabajo}}</p>
+          <p>{{experiencia.puesto}}</p>
+          <p>{{experiencia.descripcion_exp}}</p>
+          <p>{{experiencia.periodo_exp}}</p>
+        </h5>
+      </div>
+      <div class="col-sm-1">
+        <div><ul class="list-group list-group-horizontal">
+        <!-- Button trigger modal -->
+        <li class="list-group-item">
+          <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalexperiencia"></i>
+          <div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="row modal-header">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">trabajo</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">puesto</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">descripcion</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">periodo</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <button type="button" class="btn btn-primary">Guardar</button>
           </div>
-   </div>
-   </section>
+          <div class="mb-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </li>
+        <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
