@@ -1,6 +1,6 @@
 .row{
     background-color: rgb(176, 250, 255);
-    --bs-gutter-x: 1.5rem;
+    margin-right: auto;
 }
 footer{
     color:rgb(101, 112, 112);

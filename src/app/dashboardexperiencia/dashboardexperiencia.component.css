@@ -8,7 +8,7 @@ i.fa-solid.fa-pencil:hover{
 #experiencia{
     background-color: rgb(109, 174, 248);
 }
-section.about{
+.row{
     margin-top: 1rem;
     border-style: groove;
     border-radius: 5rem;

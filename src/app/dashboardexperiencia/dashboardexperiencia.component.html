@@ -1,16 +1,53 @@
-<section id="experiencia"class="about">
-  <div class="container text-center">
+<section id="experiencia">
     <div class="row">
-      <div class="col-3">
-        <h1>Experiencia Laboral</h1>
-        <br>
-        <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="30%" height="">
-        <br>
-        <br>
-        <br>
-        <br>
-        <img [src]="'/assets/img/d-center.png'" alt="logo call" width="30%" height="">
+      <h1>Experiencia Laboral</h1>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-11" *ngFor="let experiencia of experiencias">
+        <ul>
+          <li>
+            <h1>{{experiencia.trabajo}}</h1> - <h3>{{experiencia.periodo_exp}}</h3>
+          </li>
+          <h5>{{experiencia.descripcion_exp}}</h5>
+        <h5>{{experiencia.puesto}}</h5>
+        </ul>
         <div class="col-sm-1">
+          <div><ul class="list-group list-group-horizontal">
+          <!-- Button trigger modal -->
+          <li class="list-group-item">
+            <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalexperiencia"></i>
+            <div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="row modal-header">
+            <div class="mb-3">
+              <label for="formFileMultiple" class="form-label">trabajo</label>
+              <input class="form-control" type="text" id="formFileMultiple" multiple>
+              <label for="formFileMultiple" class="form-label">puesto</label>
+              <input class="form-control" type="text" id="formFileMultiple" multiple>
+              <label for="formFileMultiple" class="form-label">descripcion</label>
+              <input class="form-control" type="text" id="formFileMultiple" multiple>
+              <label for="formFileMultiple" class="form-label">periodo</label>
+              <input class="form-control" type="text" id="formFileMultiple" multiple>
+              <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="mb-3">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          </li>
+          <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+          </ul></div>
+        </div>
+      <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="10%" height="">
+      <br>
+      <br>
+      <br>
+      <br>
+     <img [src]="'/assets/img/d-center.png'" alt="logo call" width="10%" height="">
+    <div class="col-sm-1">
           <div><ul class="list-group list-group-horizontal">
           <!-- Button trigger modal -->
           <li class="list-group-item">
@@ -36,46 +73,5 @@
           </ul></div>
         </div>
       </div>
-      <div class="col-8">
-        <h5 class="center" *ngFor="let experiencia of experiencias">
-          <br>
-          <p>{{experiencia.trabajo}}</p>
-          <p>{{experiencia.puesto}}</p>
-          <p>{{experiencia.descripcion_exp}}</p>
-          <p>{{experiencia.periodo_exp}}</p>
-        </h5>
-      </div>
-      <div class="col-sm-1">
-        <div><ul class="list-group list-group-horizontal">
-        <!-- Button trigger modal -->
-        <li class="list-group-item">
-          <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalexperiencia"></i>
-          <div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
-          <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="row modal-header">
-          <div class="mb-3">
-            <label for="formFileMultiple" class="form-label">trabajo</label>
-            <input class="form-control" type="text" id="formFileMultiple" multiple>
-            <label for="formFileMultiple" class="form-label">puesto</label>
-            <input class="form-control" type="text" id="formFileMultiple" multiple>
-            <label for="formFileMultiple" class="form-label">descripcion</label>
-            <input class="form-control" type="text" id="formFileMultiple" multiple>
-            <label for="formFileMultiple" class="form-label">periodo</label>
-            <input class="form-control" type="text" id="formFileMultiple" multiple>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
-          <div class="mb-3">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-        </li>
-        <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-        </ul></div>
-      </div>
     </div>
-  </div>
 </section>
