@@ -8,24 +8,30 @@ import { Experiencia } from '../models/experiencia';
 })
 export class ExperienciaService {
 url= 'http://localhost:8080/experiencia/'
+
   constructor(private httpClient:HttpClient) { }
 
-public list(): Observable<Experiencia[]>{
+  //metodos del netbeans ver todos
+public getExperiencias(): Observable<Experiencia[]>{
   return this.httpClient.get<Experiencia[]>(this.url + 'lista');
 }
 
+//ver uno
 public getById(id:number):Observable<Experiencia>{
   return this.httpClient.get<Experiencia>(this.url + `ver/${id}`);
 }
 
+//crear
 public crear(experiencia:Experiencia):Observable<any>{
   return this.httpClient.post<any>(this.url + 'crear', experiencia);
 }
 
+//eliminar
 public eliminar(id: number): Observable<any>{
   return this.httpClient.delete<any>(this.url + `borrar/${id}`);
 }
 
+//editar
 public editar(experiencia:Experiencia):Observable<any>{
   return this.httpClient.put<any>(this.url + 'editar', experiencia);
 }

@@ -9,7 +9,7 @@ import { ExperienciaService } from '../../servicios/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  experiencias: Experiencia[]=[]; //se llama al modelo que es un array
+  experiencias!: Experiencia[]; //se llama al modelo que es un array, crud con modales
 
 
   constructor(
@@ -22,7 +22,7 @@ export class ExperienciaComponent implements OnInit {
   }
      
     cargarExperiencia():void{
-      this.expeServ.list().subscribe(data => {this.experiencias=data});
+      this.expeServ.getExperiencias().subscribe(data => {this.experiencias=data});
     }
 
   

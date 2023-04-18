@@ -34,9 +34,7 @@ i.fa-solid.fa-user-tie.fa-xl:hover{
 }
 
 
-section.about{
-    margin-top: 5rem;
-}
+
 /*section.dat{
     margin-top: 25rem;
 }*/
@@ -48,9 +46,7 @@ section.about{
 /*i.fa-solid.fa-image.fa-2xl{
     color: rgb(248, 246, 246);
 }*/
-#experiencia{
-    background-color: rgb(109, 174, 248);
-}
+
 
 
 #habilidades{
@@ -92,9 +88,7 @@ section.about{
 .progreso:hover{
     animation:Aumentar 5s ease;
 }
-#proyectos{
-    background-color: rgb(109, 174, 248);
-}
+
 i.list.group.item{
     border-right: 50px !important;
     border-radius: 5rem;

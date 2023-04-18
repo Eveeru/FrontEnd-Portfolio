@@ -10,3 +10,7 @@ i.fa-solid.fa-pencil:hover{
     border-radius: 5rem;
     margin-top: 1rem;
 }
+
+h5, .form-label, ul{
+    color: black;
+    }

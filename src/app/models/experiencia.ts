@@ -15,4 +15,6 @@ export class Experiencia {
         this.imagen_exp = imagen_exp
         this.personaid = personaid;
     }
+
+    
 }
