@@ -12,7 +12,7 @@ url= 'http://localhost:8080/experiencia/'
   constructor(private httpClient:HttpClient) { }
 
   //metodos del netbeans ver todos
-public getExperiencias(): Observable<Experiencia[]>{
+public List(): Observable<Experiencia[]>{
   return this.httpClient.get<Experiencia[]>(this.url + 'lista');
 }
 

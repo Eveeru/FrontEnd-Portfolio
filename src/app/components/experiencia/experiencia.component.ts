@@ -22,7 +22,7 @@ export class ExperienciaComponent implements OnInit {
   }
      
     cargarExperiencia():void{
-      this.expeServ.getExperiencias().subscribe(data => {this.experiencias=data});
+      this.expeServ.List().subscribe(data => {this.experiencias=data});
     }
 
   

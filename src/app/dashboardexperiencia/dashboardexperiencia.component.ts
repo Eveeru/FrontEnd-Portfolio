@@ -66,7 +66,7 @@ get Trabajo(){
 
 
   getExperiencias(): void{
-    this.expeServ.getExperiencias().subscribe({
+    this.expeServ.List().subscribe({
       next: (data) => {
         this.experiencias=data;
         console.log("Experiencias en diseño cargadas correctamente");
@@ -132,7 +132,7 @@ get Trabajo(){
 
 
   back(){
-    this.ruta.navigate(['/aadmin']);
+    this.ruta.navigate(['/persona']);
   }
 
 
