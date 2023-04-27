@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from '../../servicios/datos.service';
+import { Progreso } from 'src/app/models/progreso';
+import { ProgresoService } from 'src/app/servicios/progreso.service';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-habilidades',
@@ -8,21 +12,30 @@ import { DatosService } from '../../servicios/datos.service';
 })
 export class HabilidadesComponent implements OnInit {
 
-  //Crear variable de instancia para almacenar los datos con los que trata el Servicio
-  progresos: any;
+
+  progresos: Progreso[] = [];
+
   
 
-  constructor(
-    //Inyectar el servicio para tomar acceso en la clase a los métodos
-    private datosService: DatosService) { }
+  constructor(private progService: ProgresoService) { }
 
   ngOnInit(): void {
-    //Esto es almacenar en lqa variable de instancia los datos recuperados por el Servicio
-    this.datosService.getDatos().subscribe(data => {
-      //console.log(data);
-      //Definir info a mostrar
-      this.progresos=data.progresos;
-    });
+    this.cargarHabilidad();
   }
 
+     //llamamos a los métodos
+     public cargarHabilidad():void{   //no va a haber ningun retorno, solo una carga de datos
+      this.progService.List().subscribe(data => {this.progresos=data}); // uso el this porque esta fuera del método
+    }
+    public borrar(id:number){
+      if(id != undefined){
+        this.progService.eliminar(id).subscribe(
+          data =>{
+            this.cargarHabilidad();
+          }, err =>{
+            alert("No se pudo elmiminar la educación")
+          }
+        )
+      }
+    }
 }

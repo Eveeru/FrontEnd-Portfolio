@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from '../../servicios/datos.service';
+ import { HttpClient } from '@angular/common/http';
+import { Proyecto } from 'src/app/models/proyecto';
+ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -8,19 +11,30 @@ import { DatosService } from '../../servicios/datos.service';
 })
 export class ProyectosComponent implements OnInit {
   //Crear variable de instancia para almacenar los datos con los que trata el Servicio
-  proyectos: any;
+  proyectos: Proyecto[]=[];
 
-  constructor(
-     //Inyectar el servicio para tomar acceso en la clase a los métodos
-     private datosService: DatosService) { }
+  constructor(private proyService: ProyectoService) { }
 
   ngOnInit(): void {
-     //Esto es almacenar en lqa variable de instancia los datos recuperados por el Servicio
-     this.datosService.getDatos().subscribe(data => {
-      //console.log(data);
-      //Definir info a mostrar
-      this.proyectos=data.proyecto;
-    });
+     this.cargarProyecto();
   }
+
+  //llamar a los metodos
+    public cargarProyecto():void{ //sin retorno, solo carga datos
+      this.proyService.List().subscribe(data => {this.proyectos=data});
+    }
+
+    public borrar(id:number){
+      if(id != undefined){
+        this.proyService.eliminar(id).subscribe(
+          data =>{
+            // alert("Experiencia eliminada correctamente)
+            this.cargarProyecto();
+          }, err =>{
+            alert("No se pudo elmiminar la experiencia")
+          }
+        )
+      }
+    }
 
 }

@@ -7,26 +7,23 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'https://localhost:8080/persona/'
+  URL = 'http://localhost:8080/persona'
 constructor(private httpClient: HttpClient) { }
 
 public list(): Observable<Persona[]>{
-  return this.httpClient.get<Persona[]>(this.URL+ 'lista');
-}
-public getById(id:number):Observable<Persona>{
-  return this.httpClient.get<Persona>(this.URL+ `ver/${id}`);
+  return this.httpClient.get<Persona[]>(this.URL+ '/lista');
 }
 
 public crear(persona:Persona):Observable<any>{
-  return this.httpClient.post<any>(this.URL+ 'crear', persona);
+  return this.httpClient.post<any>(this.URL+ '/crear', persona);
 }
 
-public eliminar(id: number): Observable<any>{
-  return this.httpClient.delete<any>(this.URL+ `borrar/${id}`);
+public borrar(id: number): Observable<any>{
+  return this.httpClient.delete<any>(this.URL+ `/borrar/${id}`);
 }
 
 public editar(persona:Persona):Observable<any>{
-  return this.httpClient.put<any>(this.URL+ 'editar', persona);
+  return this.httpClient.put<any>(this.URL+ '/editar', persona);
 }
 
 }

@@ -1,20 +1,20 @@
 <section id="educación"class="about">
-      <div class="row" *ngFor="let educacion of educaciones">
-        <h1> Educacion</h1>
+      <div class="row" >
+        <h1>Educacion</h1>
         <div class="col-lg-1"></div>
-        <div class="col-lg-11">
+        <div class="col-lg-11"*ngFor="let educacion of educaciones">
           <ul>
             <li>
-              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo}}</h3>
+              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo_edu}}</h3>
             </li>
-            <p>{{educacion.titulo}}</p>
+            
             <p>{{educacion.nivel}}</p>
           </ul>
           <ul>
             <li>
-              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo}}</h3>
+              <h1>{{educacion.institucion}}</h1> - <h3>{{educacion.periodo_edu}}</h3>
             </li>
-            <p>{{educacion.titulo}}</p>
+           
             <p>{{educacion.nivel}}</p>
           </ul>
         <img [src]="'/assets/img/logo ijme.jpg'" alt="logo ijme" width="30%" height="">

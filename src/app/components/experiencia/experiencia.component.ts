@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from '../../servicios/experiencia.service';
+import { DatosService } from 'src/app/servicios/datos.service';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { ExperienciaService } from '../../servicios/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  experiencias!: Experiencia[]; //se llama al modelo que es un array, crud con modales
+  experiencias: Experiencia[]=[]; //se llama al modelo que es un array, crud con modales
 
 
   constructor(
@@ -21,10 +23,23 @@ export class ExperienciaComponent implements OnInit {
     this.cargarExperiencia();
   }
      
-    cargarExperiencia():void{
+  //llamar a los metodos
+    public cargarExperiencia():void{ //sin retorno, solo carga datos
       this.expeServ.List().subscribe(data => {this.experiencias=data});
     }
 
+    public borrar(id:number){
+      if(id != undefined){
+        this.expeServ.eliminar(id).subscribe(
+          data =>{
+            // alert("Experiencia eliminada correctamente)
+            this.cargarExperiencia();
+          }, err =>{
+            alert("No se pudo elmiminar la experiencia")
+          }
+        )
+      }
+    }
   
 
 }

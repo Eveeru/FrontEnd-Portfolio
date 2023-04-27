@@ -20,8 +20,19 @@ export class PresentacionComponent implements OnInit {
     this.cargarPersona();
   }
 
-  cargarPersona():void{
-  this.persoServ.list().subscribe(data => {this.personas=data});
+  public cargarPersona():void{
+    this.persoServ.list().subscribe(data => {this.personas=data});
+}
+public borrar(id:number){
+  if(id != undefined){
+    this.persoServ.borrar(id).subscribe(
+      data =>{
+        this.cargarPersona();
+      }, err =>{
+        alert("No se pudo elmiminar los datos personales")
+      }
+    )
+  }
 }
 
 
