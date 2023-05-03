@@ -1,16 +1,24 @@
 {
-    "alojamiento" : {
-      "public" : " dist/prueba2 " ,
-      "ignorar" : [
-        " firebase.json " ,
-        " **/.* " ,
-        " **/módulos_nodo/** "
-      ],
-      "reescribe" : [
-        {
-          "fuente" : " ** " ,
-          "destino" : " /index.html "
-        }
-      ]
-    }
+  "alojamiento": {
+    "public": " dist/prueba2 ",
+    "ignorar": [
+      " firebase.json ",
+      " **/.* ",
+      " **/módulos_nodo/** "
+    ],
+    "reescribe": [
+      {
+        "fuente": " ** ",
+        "destino": " /index.html "
+      }
+    ]
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
+}
