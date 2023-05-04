@@ -9,7 +9,7 @@ import { PersonaService } from '../../servicios/persona.service';
   styleUrls: ['./presentacion.component.css']
 })
 export class PresentacionComponent implements OnInit {
-  personas: Persona[]=[]; //se llama al modelo que es un array
+  persona: Persona[]=[]; //se llama al modelo que es un array
 
   constructor(
      //Inyectar el servicio para tomar acceso en la clase a los métodos
@@ -21,7 +21,7 @@ export class PresentacionComponent implements OnInit {
   }
 
   public cargarPersona():void{
-    this.persoServ.list().subscribe(data => {this.personas=data});
+    this.persoServ.list().subscribe(data => {this.persona=data});
 }
 public borrar(id:number){
   if(id != undefined){

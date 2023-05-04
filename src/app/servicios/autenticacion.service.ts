@@ -6,18 +6,20 @@ import { Observable, map, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url = 'http://localhost:8080/persona/login';
+  url = 'http://localhost:8080/persona/autenticacion/login';
   currentUserSubject: BehaviorSubject<any>;
+  sessionStorage: any;
 
   constructor(private http:HttpClient) {
     console.log("Está corriendo el servicio de autenticación");
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
    }
-   loginUser(credenciales: any): Observable<any> {
+   loginPersona(credenciales: any): Observable<any> {
+    console.log(credenciales);
     var httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
     }
     return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));

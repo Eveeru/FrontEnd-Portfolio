@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/models/persona';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
@@ -11,41 +11,23 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class LoginComponent implements OnInit {
   form:FormGroup;
-  email = '';
-  password = '';
+ persona : Persona = new Persona("","","","","");
 
   constructor(private formBuilder:FormBuilder, private authService: AutenticacionService, private ruta: Router) {
     this.form=this.formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      password:['', [Validators.required,Validators.minLength(8)]],
+      email:['',[Validators.required, Validators.email]],
+      clave:['',[Validators.required,Validators.minLength(8)]],
     })
    }
 
   ngOnInit(): void {
-    sessionStorage.setItem('currentUser', "");
   }
   get Email(){
-    return this.form.get("email");
+    return this.form.get('email');
   }
 
-  get EmailInvalido(){
-    return this.Email?.errors && this.Email?.touched;
-  }
-
-  get EmailValido(){
-    return !this.Email?.errors && this.Email?.touched;
-  }
-
-   get Password(){
-    return this.form.get("password");
-  }
-
-  get PasswordInvalido(){
-    return this.Password?.errors && this.Password?.touched;
-  }
-
-  get PasswordValido(){
-    return !this.Password?.errors && this.Password?.touched;
+   get clave(){
+    return this.form.get('clave');
   }
   
   limpiar() {
@@ -55,24 +37,19 @@ export class LoginComponent implements OnInit {
   }
 
   onEnviar(event: Event) {
-    event.preventDefault();
-    if (this.form.valid) {
-      console.log(JSON.stringify(this.form.value));
-      this.authService.loginUser(this.form.value).subscribe(data => {
-        console.log("DATA: " + JSON.stringify(data.id));
-        if (data.id) {
-          alert("Puedes editar el portfolio");
-          this.ruta.navigate(['/dashboard']);
-        } else {
-          alert("Error al iniciar sesión, credenciales no válidas!!!");
-        }
-      }, err => {
-        alert("ERROR!!!");
+    event.preventDefault;
+    if (this.form.valid){
+      //console.log(JSON.stringify(this.form.value));
+      this.authService.loginPersona(JSON.stringify(this.form.value)).subscribe(data => {
+        console.log("DATA: " + JSON.stringify(data));
+        window.location.reload(); //this.ruta.navigate(['/dashboard'])
+      }, error => {
+        alert("error al iniciar sesion")
       })
+      //this.ruta.navigate([ ])
     } else {
-      sessionStorage.setItem('currentUser', "");
-      alert("Error! No tienes acceso");
-      this.ruta.navigate(['/']);
+      alert("hay un error en el formulario");
+     
     }
   }
 

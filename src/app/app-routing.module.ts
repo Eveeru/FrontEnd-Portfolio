@@ -9,8 +9,7 @@ const routes: Routes = [
   {path:'**', component:IntroComponent},
   {path:'login', component:LoginComponent},
   {path:'Dashboard', component:DashboardComponent, canActivate:[GuardService]},
-  {path:'', redirectTo:'/intro', pathMatch:'full'},
-  {path:'**', component:IntroComponent}
+  {path:'', redirectTo:'/intro', pathMatch:'full'}
 ];
 
 @NgModule({

@@ -12,8 +12,7 @@
                 <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;Email: 
             </label>
             <div class="mb-3">
-                <input type="email" class="form-control" formControlName="email" placeholder="email@dominio.com"
-                [ngClass]="{'is-invalid': EmailInvalido, 'is-valid': EmailValido}">
+                <input type="email" class="form-control" formControlName="email" placeholder="email@dominio.com">
                 
                 <!-- Se verifica si cumple con el formato de email -->
                 <div *ngIf="Email?.errors && Email?.touched">
@@ -29,15 +28,14 @@
         <div class="mb-3 row">
             <label for="Password" class="col-sm-4 col-form-label"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;&nbsp;Contraseña: </label>
             <div class="mb-3">
-                <input type="password" class="form-control" formControlName="password" placeholder="********"
-                [ngClass]="{'is-invalid': PasswordInvalido, 'is-valid': PasswordValido}">
+                <input type="password" class="form-control" formControlName="password" placeholder="********">
 
                 <!-- Se verifica si cumple con el formato de password -->
-                <div *ngIf="Password?.errors && Password?.touched">
-                    <p *ngIf="Password?.hasError('required')" class="errores">
+                <div *ngIf="clave?.errors && clave?.touched">
+                    <p *ngIf="clave?.hasError('required')" class="errores">
                         El Password es requerido.
                     </p>
-                    <p *ngIf="Password?.errors?.['minlength']" class="errores">
+                    <p *ngIf="clave?.errors?.['minlength']" class="errores">
                         El Password debe ser de 8 o más caracteres.
                     </p>
                 </div>

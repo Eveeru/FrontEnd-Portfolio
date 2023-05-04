@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from '../servicios/persona.service';
 import { Persona } from '../models/persona';
+import { AutenticacionService } from '../servicios/autenticacion.service';
 
 @Component({
   selector: 'app-dashboardpresentacion',
@@ -12,7 +13,7 @@ export class DashboardpresentacionComponent implements OnInit {
   form: FormGroup;
   info: string = '';
   imagen: string = '';
-  personas: Persona [] = []; //se llama al modelo que es un array
+  persona: Persona [] = []; //se llama al modelo que es un array
 
   constructor(private formBuilder: FormBuilder,private persoServ: PersonaService) { 
     this.form = this.formBuilder.group({
@@ -27,7 +28,7 @@ export class DashboardpresentacionComponent implements OnInit {
   }
 
   cargarPersona():void{
-  this.persoServ.list().subscribe(data => {this.personas=data});
+  this.persoServ.list().subscribe(data => {this.persona=data});
 
   
   
