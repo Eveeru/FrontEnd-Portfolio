@@ -31,7 +31,7 @@ export class LogoutComponent implements OnInit {
   
     window.sessionStorage.removeItem;
     
-    this.ruta.navigate(['/']);
+    this.ruta.navigate(['/intro']);
     window.location.reload();
   }
 

@@ -58,9 +58,9 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     if (this.form.valid) {
       console.log(JSON.stringify(this.form.value));
-      this.authService.loginUser(this.form.value).subscribe(db => {
-        console.log("DATA: " + JSON.stringify(db.id));
-        if (db.id) {
+      this.authService.loginUser(this.form.value).subscribe(data => {
+        console.log("DATA: " + JSON.stringify(data.id));
+        if (data.id) {
           alert("Puedes editar el portfolio");
           this.ruta.navigate(['/dashboard']);
         } else {

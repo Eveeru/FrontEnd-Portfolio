@@ -1,13 +1,13 @@
 <section id="sobre-mi">
-  <div class="row">
+  <div class="row"*ngFor="let persona of personas">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
       <img [src]="'/assets/img/eveperfil.jpg'" class="img-fluid" alt="foto de perfil"title="..." id="fotoperfil">
     </div>
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" *ngFor="let persona of personas">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
       <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
       <p>{{persona.tituloperfil}}</p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" *ngFor="let persona of personas">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
       <span>
         <h1>Acerca de mi</h1>
         <p>{{persona.presentacion}}</p>

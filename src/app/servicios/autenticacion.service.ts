@@ -19,11 +19,11 @@ export class AutenticacionService {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(db => {
-      sessionStorage.setItem('currentUser', JSON.stringify(db));
-      this.currentUserSubject.next(db);
-      console.log("Servicio esta corriendo" + JSON.stringify(db));
-      return db;
+    return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data => {
+      sessionStorage.setItem('currentUser', JSON.stringify(data));
+      this.currentUserSubject.next(data);
+      console.log("Servicio esta corriendo" + JSON.stringify(data));
+      return data;
     }));
   }
   get usuarioAutenticado() {
