@@ -11,12 +11,12 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class LoginComponent implements OnInit {
   form:FormGroup;
- persona : Persona = new Persona("","","","","");
+ persona : Persona = new Persona("","","","","","","");
 
   constructor(private formBuilder:FormBuilder, private authService: AutenticacionService, private ruta: Router) {
     this.form=this.formBuilder.group({
-      email:['',[Validators.required, Validators.email]],
-      clave:['',[Validators.required,Validators.minLength(8)]],
+      email:['usuario@gmail.com',[Validators.required, Validators.email]],
+      clave:['Portfolio',[Validators.required,Validators.minLength(4)]],
     })
    }
 

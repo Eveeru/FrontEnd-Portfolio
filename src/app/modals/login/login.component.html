@@ -9,34 +9,34 @@
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div class="mb-3 row">
             <label for="email" class="col-sm-4 col-form-label">
-                <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;Email: 
+                <i class="fa-solid fa-envelope"></i>Email: 
             </label>
             <div class="mb-3">
                 <input type="email" class="form-control" formControlName="email" placeholder="email@dominio.com">
                 
                 <!-- Se verifica si cumple con el formato de email -->
                 <div *ngIf="Email?.errors && Email?.touched">
-                    <p *ngIf="Email?.hasError('required')" class="errores">
+                    <p *ngIf="Email?.hasError('required')">
                         El email es requerido.
                     </p>
-                    <p *ngIf="Email?.hasError('email')" class="errores">
+                    <p *ngIf="Email?.hasError('email')">
                         El formato del email debe ser válido.
                     </p>
                 </div>
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="Password" class="col-sm-4 col-form-label"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;&nbsp;Contraseña: </label>
+            <label for="Clave" class="col-sm-4 col-form-label"><i class="fa-solid fa-lock"></i>Clave:</label>
             <div class="mb-3">
-                <input type="password" class="form-control" formControlName="password" placeholder="********">
+                <input type="clave" class="form-control" formControlName="clave" placeholder="****">
 
                 <!-- Se verifica si cumple con el formato de password -->
                 <div *ngIf="clave?.errors && clave?.touched">
-                    <p *ngIf="clave?.hasError('required')" class="errores">
-                        El Password es requerido.
+                    <p *ngIf="clave?.hasError('required')">
+                        La clave es requerida.
                     </p>
-                    <p *ngIf="clave?.errors?.['minlength']" class="errores">
-                        El Password debe ser de 8 o más caracteres.
+                    <p *ngIf="clave?.errors?.['minlength']">
+                        La clave debe ser de 4 o más caracteres.
                     </p>
                 </div>
             </div>

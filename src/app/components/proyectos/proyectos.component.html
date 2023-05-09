@@ -1,11 +1,11 @@
 <section id="proyectos">
   <div class="row">
     <h1>Proyectos</h1>
-    <div class="contenedor" *ngFor="let proyecto of proyectos">
+    <div class="contenedor">
     <div>
     <div class="col-sm-12 col-md-3 col-lg-3">
   </div>
-<div class="col-sm-12 col-md-7 col-lg-7">
+<div class="col-sm-12 col-md-7 col-lg-7" *ngFor="let proyecto of proyectos">
   <p>{{proyecto.titulo_proy}}</p>
   <p>{{proyecto.realizacion}}</p>
   <p>{{proyecto.descripcion_proy}}</p>
