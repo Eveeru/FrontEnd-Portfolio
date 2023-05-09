@@ -7,6 +7,8 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
+  persona: Persona[]=[];
+  personaServ: any;
   URL = 'https://portfolio-backend-3u33.onrender.com/persona'
 constructor(private httpClient: HttpClient) { }
 

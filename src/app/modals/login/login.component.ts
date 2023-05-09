@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder, private authService: AutenticacionService, private ruta: Router) {
     this.form=this.formBuilder.group({
-      email:['usuario@gmail.com',[Validators.required, Validators.email]],
-      clave:['Portfolio',[Validators.required,Validators.minLength(4)]],
+      email:['',[Validators.required, Validators.email]],
+      clave:['',[Validators.required,Validators.minLength(4)]],
     })
    }
 
@@ -40,9 +40,10 @@ export class LoginComponent implements OnInit {
     event.preventDefault;
     if (this.form.valid){
       //console.log(JSON.stringify(this.form.value));
-      this.authService.loginPersona(JSON.stringify(this.form.value)).subscribe(data => {
+      this.authService.loginPersona(this.form.value).subscribe(data => {
         console.log("DATA: " + JSON.stringify(data));
-        window.location.reload(); //this.ruta.navigate(['/dashboard'])
+        window.location.reload(); 
+        this.ruta.navigate(['/dashboard']);
       }, error => {
         alert("error al iniciar sesion")
       })

@@ -8,14 +8,14 @@ import { Observable, map, BehaviorSubject } from 'rxjs';
 export class AutenticacionService {
   url = 'https://portfolio-backend-3u33.onrender.com/persona/autenticacion/login';
   currentUserSubject: BehaviorSubject<any>;
-  sessionStorage: any;
+  //sessionStorage: any;
 
   constructor(private http:HttpClient) {
     console.log("Está corriendo el servicio de autenticación");
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
    }
    loginPersona(credenciales: any): Observable<any> {
-    console.log(credenciales);
+    //console.log(credenciales);
     var httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
