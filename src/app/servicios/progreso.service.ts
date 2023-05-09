@@ -7,7 +7,7 @@ import { Progreso } from '../models/progreso';
   providedIn: 'root'
 })
 export class ProgresoService {
-  url = 'http://localhost:8080/progreso';
+  url = 'https://portfolio-backend-3u33.onrender.com/progreso';
 
   constructor(private httpClient:HttpClient) { }
    
