@@ -5,7 +5,7 @@
         <div class="habilidades mb-3" *ngFor="let progreso of progresos">
           <div class="barra">
             <!--Interación sobre la variable de instancia y presentacion de datos mediante interpolacion-->
-            <div class="progreso" [style.--w.%]="progreso.porcentaje">{{progreso.porcentaje}}% {{progreso.nombre}}</div>
+            <div class="progreso" [style.--w.%]="progreso.porcentaje">{{progreso.porcentaje}}% {{progreso.nombre_prog}}</div>
           </div>
         </div>
         <div class="col-sm-1">

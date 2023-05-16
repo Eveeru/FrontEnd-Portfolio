@@ -1,198 +1,77 @@
-<!-- modal con informacion a editar-->
-<div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="row modal-header">
-        <h1 class="modal-title fs-5" id="Modalexperiencia">Experiencia Laroral</h1> 
-        <div class="text-end">
-          <button type="btn" class="btn" data-bs-toggle="modal" data-bs-target="#modalExpeCrud"><i class="fa-solid fa-plus"></i></button>
-          <button type="btn" class="btn" data-bs-dismiss="modal"  aria-label="Close" (click)="reset()"><i class="fa-solid fa-xmark"></i></button>
-        </div>
+<section id="experiencia">
+  <div class="row">
+    <h1>Experiencia Laboral</h1>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11" *ngFor="let experiencia of experiencias">
+      <ul>
+        <li>
+          <h1>{{experiencia.trabajo}}</h1> - <h3>{{experiencia.periodo_exp}}</h3>
+        </li>
+        <h5>{{experiencia.descripcion_exp}}</h5>
+      <h5>{{experiencia.puesto}}</h5>
+      </ul>
+      <div class="col-sm-1">
+        <div><ul class="list-group list-group-horizontal">
+        <!-- Button trigger modal -->
+        <li class="list-group-item">
+          <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalexperiencia"></i>
+          <div class="modal fade" id="Modalexperiencia" tabindex="-1" aria-labelledby="#Modalexperiencia" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="row modal-header">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">trabajo</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">puesto</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">descripcion</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" class="form-label">periodo</label>
+            <input class="form-control" type="text" id="formFileMultiple" multiple>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+          <div class="mb-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </li>
+        <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+        </ul></div>
       </div>
-
-      <div class="modal-body">
-          <div class="container mb-3" >
-            <li class="list-group-item mt-4" *ngFor="let experiencia of experiencias">
-              <div class="col-12">
-                <p><b>Trabajo:   </b>     {{experiencia.trabajo}} </p>
-                <p><b>Puesto:   </b>     {{experiencia.puesto}} </p>  
-                <p><b>Descripcion_exp:   </b>     {{experiencia.descripcion_exp}}</p>
-                <p><b>Periodo_exp:   </b>     {{experiencia.periodo_exp}} </p>
-                <p><b>Imagen_exp   </b>     {{experiencia.imagen_exp}} </p>
-              </div>
-
-              <div class="col-12 text-end">
-                <!-- <button type="btn" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesignCrud"><i class="fa-solid fa-plus"></i></button> -->
-                <button class="btn" (click)="experiencia.id? getById(experiencia.id): null"  data-bs-toggle="modal"data-bs-target="#modalExpeCrud"><i class="fa-solid fa-pencil"></i></button>
-                <button class="btn" (click)="experiencia.id? eliminar(experiencia.id): null"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
-                <!--<button type="btn" class="btn" data-bs-dismiss="modal"  aria-label="Close" (click)="limpiar()"><i class="fa-solid fa-xmark"></i></button>-->
-              </div>
-              <hr>
-            </li>
-          </div>     
+    <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="10%" height="">
+    <br>
+    <br>
+    <br>
+    <br>
+   <img [src]="'/assets/img/d-center.png'" alt="logo call" width="10%" height="">
+  <div class="col-sm-1">
+        <div><ul class="list-group list-group-horizontal">
+        <!-- Button trigger modal -->
+        <li class="list-group-item">
+          <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalimgexp"></i>
+          <div class="modal fade" id="Modalimgexp" tabindex="-1" aria-labelledby="#Modalimgexp" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="row modal-header">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Foto</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+          <div class="mb-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </li>
+        <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
+        </ul></div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-<!--modal ExpeCrud-->
-<div class="modal 'fade" id="modalExpeCrud" tabindex="-1" aria-labelledby="modalExpeCrud" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-  <!----------------------------------->
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalExpeCrud">Add / Edit a Design Experience</h5> 
-        <button type="btn" class="btn" (click)="reset()" data-bs-dismiss="modal"  aria-label="Close" ><i class="fa-solid fa-xmark"></i></button>
-      </div>
-
-        <div class="modal-body">
-          <form [formGroup]="experiencia_form">
-
-          <input type="hidden" name="" id="id">
-
-            <div class="mb-3">
-              <label for="trabajo" class="form-label"><b>Trabajo</b></label>
-              <input type="text" formControlName="trabajo" id="trabajo" name="" class="form-control col-12" aria-describedby="TrabajoHelp" [ngClass]="{'is-invalid':Trabajo?.errors && Trabajo?.touched,'is-valid':!Trabajo?.errors && Trabajo?.touched}">
-              <div *ngIf="Trabajo?.errors  && Trabajo?.touched" class="mb-4">
-                <p *ngIf="Trabajo?.hasError('required')" class="error text-small"><i>Trabajo requerido.</i></p>
-              </div>
-            </div>
-                                       
-            <div class="mb-3">
-              <label for="puesto" class="form-label"><b>Puesto</b></label>
-              <input type="text" formControlName="puesto" id="puesto" name="" class="form-control col-12" aria-describedby="PuestoHelp" [ngClass]="{'is-invalid':Puesto?.errors && Puesto?.touched,'is-valid':!Puesto?.errors && Puesto?.touched}">
-              <div *ngIf="Puesto?.errors  && Puesto?.touched" class="mb-4">
-                <p *ngIf="Puesto?.hasError('required')" class="error text-small"><i>Puesto requerido.</i></p>
-              <p *ngIf="Puesto?.errors?.['minLength']" class="error text-small"><i>Debe ser de 4 caracteres.</i></p>
-              <p *ngIf="Puesto?.errors?.['maxLength']" class="error text-small"><i>Debe ser de 4 caracteres.</i></p>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="descripcion_exp" class="form-label"><b>Descripcion</b></label>
-              <textarea type="text" class="form-control" formControlName="descripcion_exp" id="descripcion_exp" name="" [ngClass]="{'is-invalid':Descripcion_exp?.errors && Descripcion_exp?.touched,'is-valid':!Descripcion_exp?.errors && Descripcion_exp?.touched}" 
-              aria-describedby="descripcionHelp"></textarea>
-              <div *ngIf="Descripcion_exp?.errors  && Descripcion_exp?.touched" class="mb-4">    
-                <p *ngIf="Descripcion_exp?.hasError('required')" class="error text-small"><i>Descripción requerida.</i></p>
-                <p *ngIf="Descripcion_exp?.errors?.['minLength']" class="error text-small"><i>Debe tener un mínimo de 6 caracteres.</i></p>
-              </div>
-            </div>
-        
-            <div class="mb-3">
-              <label for="periodo_exp" class="form-label"><b>Periodo</b></label>
-              <input type="text" formControlName="periodo_exp" id="periodo_exp" name="" class="form-control col-12" aria-describedby="PeriodoHelp" [ngClass]="{'is-invalid':Periodo_exp?.errors && Periodo_exp?.touched,'is-valid':!Periodo_exp?.errors && Periodo_exp?.touched}">
-              <div *ngIf="Periodo_exp?.errors  && Periodo_exp?.touched" class="mb-4">
-                <p *ngIf="Periodo_exp?.hasError('required')" class="error text-small"><i>Periodo requerido.</i></p>
-              </div>
-            </div>
-        
-            <div class="mb-3">
-              <label for="imagen_exp" class="form-label"><b>Imagen</b></label>
-              <input type="text" formControlName="Imagen_exp" id="Imagen_exp" name="" class="form-control col-12" aria-describedby="ImagenHelp" [ngClass]="{'is-invalid':Imagen_exp?.errors && Imagen_exp?.touched,'is-valid':!Imagen_exp?.errors && Imagen_exp?.touched}">
-              <div *ngIf="Imagen_exp?.errors  && Imagen_exp?.touched" class="mb-4">
-                <p *ngIf="Imagen_exp?.hasError('required')" class="error text-small"><i>Imagen requerida.</i></p>
-              </div>
-            </div>
-        
-
-            <div class="text-end">           
-              <!--<button type="submit" class="btn"><i class="fa-solid fa-circle-check"></i></button>-->
-              <button type="btn" class="btn" data-bs-dismiss="modal" (click)="crear()" [disabled]="experiencia_form.invalid" style="border:none"><i class="fa-solid fa-circle-check"></i></button>
-              <!--<button type="btn" class="btn" (click)="reset()" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>-->
-              <button class="btn" (click)="back()" data-bs-toggle="modal"data-bs-target="#Modalexperiencia"><i class="fa-solid fa-chevron-left"></i></button>
-            </div>
-          </form>
-        </div>
-        
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!--         <label for="formFileMultiple" class="form-label">trabajo</label>
-              <input class="form-control" type="text" id="formFileMultiple" multiple>
-              <label for="formFileMultiple" class="form-label">puesto</label>
-              <input class="form-control" type="text" id="formFileMultiple" multiple>
-              <label for="formFileMultiple" class="form-label">descripcion</label>
-              <input class="form-control" type="text" id="formFileMultiple" multiple>
-              <label for="formFileMultiple" class="form-label">periodo</label>
-              <input class="form-control" type="text" id="formFileMultiple" multiple>
-              <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
-            <div class="mb-3">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-          </li>
-          <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-          </ul></div>
-        </div>
-      <img [src]="'/assets/img/imagen tadiseños.jpg'" alt="logo grafica" width="10%" height="">
-      <br>
-      <br>
-      <br>
-      <br>
-     <img [src]="'/assets/img/d-center.png'" alt="logo call" width="10%" height="">
-    <div class="col-sm-1">
-          <div><ul class="list-group list-group-horizontal">
-           Button trigger modal 
-          <li class="list-group-item">
-            <i class="fa-solid fa-pencil"type="button"data-bs-toggle="modal" data-bs-target="#Modalimgexp"></i>
-            <div class="modal fade" id="Modalimgexp" tabindex="-1" aria-labelledby="#Modalimgexp" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="row modal-header">
-            <div class="mb-3">
-              <label for="formFileMultiple" class="form-label">Foto</label>
-              <input class="form-control" type="file" id="formFileMultiple" multiple>
-              <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
-            <div class="mb-3">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-          </li>
-          <li class="list-group-item"><i class="fa-solid fa-x"></i></li>
-          </ul></div>
-        </div>
-      </div>
-    </div>
-</section> -->
+</section>

@@ -9,17 +9,16 @@ import { Persona } from '../models/persona';
   styleUrls: ['./dashboardpresentacion.component.css']
 })
 export class DashboardpresentacionComponent implements OnInit {
-  form: FormGroup;
+  //form: FormGroup;
   info: string = '';
   imagen: string = '';
   persona: Persona [] = []; //se llama al modelo que es un array
 
   constructor(private formBuilder: FormBuilder,private persoServ: PersonaService) { 
-    this.form = this.formBuilder.group({
-      id: [],
-      info: ['', [Validators.required]],
-      imagen: ['', [Validators.required]],
-  })
+   // this.form = this.formBuilder.group({
+     // id: [],
+      //info: ['', [Validators.required]],
+      //imagen: ['', [Validators.required]],})
   }
 
   ngOnInit(): void {
