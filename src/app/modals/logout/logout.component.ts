@@ -11,27 +11,10 @@ export class LogoutComponent implements OnInit {
   modoEdit:any;
   persona: any;
 
-  constructor(private ruta: Router ,private sPersona: PersonaService) { }
+  constructor(private ruta: Router) { }
 
   ngOnInit(): void {
-    this.sPersona.list().subscribe(data =>{
-      this.persona = data;
-      });
-      if(sessionStorage.getItem('currentUser') == null){
-      this.modoEdit = false;
-      }else if (sessionStorage.getItem('currentUser') == null){
-        this.modoEdit = false;
-      }
   }
-  cerrarSesion(){
-    sessionStorage.setItem('currentUser',"null");
-    this.modoEdit = false;
-    alert("SESIÓN CERRADA");
   
-    window.sessionStorage.removeItem;
-    
-    this.ruta.navigate(['/intro']);
-    window.location.reload();
-  }
 
 }
