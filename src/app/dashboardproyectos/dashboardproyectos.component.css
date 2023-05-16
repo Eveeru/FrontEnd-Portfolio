@@ -5,3 +5,10 @@ section{
 .contenedor{
     width: auto;
 }
+i.fa-solid.fa-x:hover,
+i.fa-solid.fa-pencil:hover{
+    color:rgb(8, 8, 8)
+}
+.list-group{
+    --bs-list-group-bg: transparet;
+}
