@@ -27,8 +27,5 @@ public borrar(id: number): Observable<any>{
 public editar(persona:Persona):Observable<any>{
   return this.httpClient.put<any>(this.URL+ '/editar', persona);
 }
-public login(persona:Persona):Observable<any>{
-  return this.httpClient.post<any>(this.URL+ '/autenticacion/login', persona);
-}
 
 }

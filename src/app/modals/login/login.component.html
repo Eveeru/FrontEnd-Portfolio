@@ -1,51 +1,25 @@
 <!--MODAL-->
-<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="m-5">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a routerLink="/dashboard">iniciar sesion</a></button>
+        </div>
       </div>
-      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div class="mb-3 row">
-            <label for="email" class="col-sm-4 col-form-label">
-                <i class="fa-solid fa-envelope"></i>Email: 
-            </label>
-            <div class="mb-3">
-                <input type="email" class="form-control" formControlName="email" placeholder="email@dominio.com">
-                
-                <!-- Se verifica si cumple con el formato de email -->
-                <div *ngIf="Email?.errors && Email?.touched">
-                    <p *ngIf="Email?.hasError('required')">
-                        El email es requerido.
-                    </p>
-                    <p *ngIf="Email?.hasError('email')">
-                        El formato del email debe ser válido.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label for="Clave" class="col-sm-4 col-form-label"><i class="fa-solid fa-lock"></i>Clave:</label>
-            <div class="mb-3">
-                <input type="clave" class="form-control" formControlName="clave" placeholder="****">
-
-                <!-- Se verifica si cumple con el formato de password -->
-                <div *ngIf="clave?.errors && clave?.touched">
-                    <p *ngIf="clave?.hasError('required')">
-                        La clave es requerida.
-                    </p>
-                    <p *ngIf="clave?.errors?.['minlength']">
-                        La clave debe ser de 4 o más caracteres.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="elemento text-center">
-            <button type="submit" class="btn btn-primary m-2" data-bs-toggle="modal" href="/src/app/dashboard/dashboard.component.html">Iniciar Sesión</button>
-            <button type="button" (click)="limpiar()" class="btn btn-secondary m-2">Restaurar</button>
-        </div>  
-    </form>
     </div>
   </div>
-</div>

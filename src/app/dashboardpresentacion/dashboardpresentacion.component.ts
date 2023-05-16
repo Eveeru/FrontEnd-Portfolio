@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from '../servicios/persona.service';
 import { Persona } from '../models/persona';
-import { AutenticacionService } from '../servicios/autenticacion.service';
 
 @Component({
   selector: 'app-dashboardpresentacion',

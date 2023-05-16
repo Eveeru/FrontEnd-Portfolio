@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class LogoutComponent implements OnInit {
   modoEdit:any;
   persona: any;
 
-  constructor(private ruta: Router ,private sPersona: PersonaService, private auth: AutenticacionService ) { }
+  constructor(private ruta: Router ,private sPersona: PersonaService) { }
 
   ngOnInit(): void {
     this.sPersona.list().subscribe(data =>{
