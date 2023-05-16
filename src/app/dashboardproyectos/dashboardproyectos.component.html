@@ -1,11 +1,21 @@
-<section id="proyectos"class="about" >
-    <div class="container text">
+<section id="proyectos">
       <div class="row">
-        <p><h4>Proyectos</h4>
-          <h5>{{titulo}}</h5>
-            <h5><time>{{realizacion}}</time></h5>
-            <h5>{{Descripcion}}</h5>
-         <link href="">
+        <h1>Proyectos</h1>
+        <div class="contenedor">
+          <div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+        </div>
+        <div class="col-sm-12 col-md-7 col-lg-7" *ngFor="let proyecto of proyectos">
+          <p>{{proyecto.titulo_proy}}</p>
+          <p>{{proyecto.realizacion}}</p>
+          <p>{{proyecto.descripcion_proy}}</p>
+          <link href="https://frontend-1eeaa.web.app">
+        </div>
+            </div>
+          </div>
+          </div>      
+        </section>
+
          <div class="col-sm-1">
           <div><ul class="list-group list-group-horizontal">
             <!-- Button trigger modal -->
@@ -37,6 +47,4 @@
           </ul>
         </div>
          </div>
-      </div>
-    </div>      
-  </section>
+

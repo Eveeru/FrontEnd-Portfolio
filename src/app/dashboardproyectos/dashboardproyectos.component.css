@@ -1,15 +1,7 @@
-section.about{
-    margin-top: 1rem;
-    border-style: groove;
-    border-radius: 5rem;
+section{
+    background-color: rgb(176, 250, 255);
+    padding: 20px;
 }
-#proyectos{
-    background-color: rgb(47, 132, 230);
+.contenedor{
+    width: auto;
 }
-.list-group{
-    --bs-list-group-bg: transparet;
-    }
-    i.fa-solid.fa-x:hover,
-    i.fa-solid.fa-pencil:hover{
-        color:rgb(4, 236, 236)
-    }    
